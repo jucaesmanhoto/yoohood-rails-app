@@ -1,0 +1,15 @@
+<div class="container">
+  <h1 class="mt-4">Events#index</h1>
+  <p>Find me in app/views/events/index.html.erb</p>
+  <% @events.each do |event| %>
+    <%= link_to event_path(event) do %>
+      <div class="card">
+        <div class="card-image">
+          <%= image_tag event.cover, width: 160, height: 90  %>
+          <%= event.event_name %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+  <%= link_to 'Create a New Event', new_event_path, class: 'mt-4 float-right btn btn-outline-primary' %>
+</div>
